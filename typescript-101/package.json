@@ -1,0 +1,18 @@
+{
+	"name": "typescript-101",
+	"version": "1.0.0",
+	"description": "1. kör npm init -y 2. kör npm i typescript 3. skapa tsconfig (eller kör npx tsc --init)",
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc",
+		"start": "node dist/index.js",
+		"dev": "tsx src/index.ts"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"tsx": "^4.20.5",
+		"typescript": "^5.9.2"
+	}
+}
