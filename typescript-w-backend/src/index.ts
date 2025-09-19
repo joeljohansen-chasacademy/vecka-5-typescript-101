@@ -11,7 +11,17 @@ connectDB();
 
 // --- Routes ---
 // Create
-app.post("/books", async (req, res) => {});
+app.post(
+	"/books",
+	async (req: Request, res: Response<Book[] | { errorMessage: string }>) => {
+		try {
+			const books = await BookModel.find();
+			return books;
+		} catch (error) {
+			res.json({ errorMessage: "error" });
+		}
+	}
+);
 
 // Create
 app.post("/books", async (req, res) => {});
@@ -19,7 +29,9 @@ app.post("/books", async (req, res) => {});
 // Read all
 app.get("/books", async (req, res) => {});
 
-app.get("/books/:id", async (req, res) => {});
+type GetBookType = { id: string };
+
+app.get("/books/:id", async (req: Request<GetBookType>, res) => {});
 
 // Update
 app.put("/books/:id", async (req, res) => {});

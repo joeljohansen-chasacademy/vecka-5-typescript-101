@@ -5,10 +5,14 @@ function greet(name: string): void {
 }
 greet("Joel");
 
-function greetPerson(name: unknown) {
+function greetPerson(name: unknown): string | number {
 	if (typeof name === "string") {
-		name.toUpperCase();
+		return name.toUpperCase();
+		//JOEL
+	} else if (typeof name === "number") {
+		return name;
 	}
+	return "NOT A STRING";
 }
 
 //Interface
